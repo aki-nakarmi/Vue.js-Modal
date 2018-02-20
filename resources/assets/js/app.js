@@ -11,6 +11,8 @@ window.Vue = require('vue');
 require('./components/newUserModal');
 require('./components/commentModal');
 require('./components/userEditModal');
+require('./components/AddAccessibilityModal');
+require('./components/AccessibilityQuestions');
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -38,6 +40,7 @@ new Vue({
     data: {
         showNewUserModal: false,
         showCommentModal: false,
-        showUserEditModal: false
+        showUserEditModal: false,
+        showAddAccessibilityModal: false
     }
 });

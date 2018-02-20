@@ -31,9 +31,11 @@ class UserController extends Controller
      */
     public function create()
     {
-        $user = User::find(2);
+        $user                   = User::find(2);
+        $questions              = collect(['question_1' => '', 'question_2' => '', 'question_3' => '', 'question_4' => '']);
+        $accessibilityQuestions =collect( config('questions'));
 
-        return view('user.create', compact('user'));
+        return view('user.create', compact('user', 'questions', 'accessibilityQuestions'));
     }
 
     /**

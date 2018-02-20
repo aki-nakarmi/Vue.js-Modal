@@ -101,7 +101,9 @@
 	<button @click="showCommentModal = true">Add Comment</button>
 	<comment-modal :show="showCommentModal" @close="showCommentModal = false"></comment-modal>
 	<button @click="showUserEditModal = true">Edit User</button>
-	<user-edit-modal :user_id="{{$user->id}}"  :show="showUserEditModal" @close="showUserEditModal = false"></user-edit-modal>
+	<user-edit-modal :user_id="{{$user->id}}" :show="showUserEditModal" @close="showUserEditModal = false"></user-edit-modal>
+	<add-accessibility-modal questions_data="{{$questions->toJson()}}" :show="showAddAccessibilityModal" @close="showAddAccessibilityModal = false"></add-accessibility-modal>
+	<button @click="showAddAccessibilityModal = true">Add Accessibility</button>
 </div>
 
 <!-- Template for the shell Modal component -->
@@ -117,7 +119,9 @@
 @include('modal.newUserModal')
 @include('modal.commentModal')
 @include('modal.userEditModal')
+@include('modal.addAccessibilityModal')
 {{--<script src="{{mix('js/vendor.js')}}"></script>--}}
 <script src="{{mix('js/app.js')}}"></script>
+
 </body>
 </html>
